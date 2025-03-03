@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -10,11 +9,17 @@ function App() {
         </div>
         <div>
           <form>
-            <input type='text' />
-            <button type='submit' ></button>
+            <input type='text' placeholder='Search SubReddit...' name='search' />
+            <button type='submit' >Submit</button>
           </form>
         </div>
       </header>
+      <div className='App-main'>
+        <p>main</p>
+      </div>
+      <aside>
+        <p>aside</p>
+      </aside>
     </div>
   );
 }

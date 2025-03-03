@@ -6,8 +6,10 @@ The final portfolio project for code academys Front-End Development unit. This p
 
 Tech used: HTML, CSS, JavaScript, React, Redux
 
-I first wireframed the project on paper. Then I made a development roadmap: first create the scaffolding. Building the content in the header then body then footer. Then populate scaffolding with information from the reddit API. Then testing the application both runs as expected and can be used on any device and browser.
+I first wireframed the project on paper. Then I made a development roadmap: first create the scaffolding. Building the content in the header, main, aside, and lastly footer. Then populate scaffolding with information from the reddit API. Then testing the application both runs as expected and can be used on any device and browser.
 
 ## Lessons Learned: 
 
-(To be added at end of project...)
+- How to use CSS grid to layout header, main, aside and footer.
+(To be added as project progresses...)
+
