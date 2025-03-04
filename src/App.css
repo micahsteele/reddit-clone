@@ -13,7 +13,7 @@
   height: 64px;
 }
 
-.App-main {
+.Posts {
   padding-left: 16px;
   grid-column: 1 / 3;
   height: 100%;

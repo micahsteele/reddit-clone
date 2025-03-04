@@ -1,7 +1,7 @@
 const Subreddits = () => {
     return (
         <aside>
-            <div>Subreddits</div>
+             <div>Subreddits</div>
         </aside>
     )
 };
