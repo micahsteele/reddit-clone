@@ -1,9 +1,10 @@
 import './Subreddit.css'
 
-const Subreddit = () => {
+const Subreddit = ({name, img, index}) => {
     return (
         <ul className='subreddit'>
-            <li>subreddit</li>
+            {<img src={img}/>}
+            <li>{name}</li>
         </ul>
     )
 };
