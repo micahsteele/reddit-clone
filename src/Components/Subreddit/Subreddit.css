@@ -1,6 +1,7 @@
 .subreddit {
     list-style-type: none;
     display: flex;
+    padding-left: 0px;
 }
 
 .subreddit img {
@@ -17,11 +18,11 @@
     border-color: transparent;
     width: 100%;
     margin-right: 8px;
+    border-radius: 5px;
 }
 
 .subreddit-button:hover {
     background-color: silver;
-    border-radius: 5px;
 }
 
 .subreddit-button:focus {

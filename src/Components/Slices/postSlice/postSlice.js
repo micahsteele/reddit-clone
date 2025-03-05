@@ -6,7 +6,15 @@ export const postsSlice = createSlice({
         posts: [],
         filteredPosts: [],
     },
-    reducers: {},
+    reducers: {
+        loadSubredditPosts: (state, action) => {
+            state.posts.push(action.payload)
+        },
+        clearPosts: (state) => {
+            state.posts = []
+            state.filteredPosts = []
+        }
+    },
     extraReducers: builder => {
         builder.addCase(fetchPosts.fulfilled, (state, action) => {
             action.payload.forEach(element => {
@@ -17,6 +25,7 @@ export const postsSlice = createSlice({
 });
 
 export const selectPosts = (state) => state.posts;
+export const { loadSubredditPosts, clearPosts } = postsSlice.actions;
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async(posts) => {
     const response = await fetch(`https://www.reddit.com/r/${posts}.json`);
