@@ -10,3 +10,24 @@
     margin-right: 8px;
     border: 3px solid;
 }
+
+.subreddit-button {
+    display: flex;
+    background-color: transparent;
+    border-color: transparent;
+    width: 100%;
+    margin-right: 8px;
+}
+
+.subreddit-button:hover {
+    background-color: silver;
+    border-radius: 5px;
+}
+
+.subreddit-button:focus {
+    background-color: gray;
+}
+
+.subreddit-name {
+    align-self: center;
+}
