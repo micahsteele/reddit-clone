@@ -16,6 +16,8 @@ export const postsSlice = createSlice({
     },
 });
 
+export const selectPosts = (state) => state.posts;
+
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async(posts) => {
     const response = await fetch(`https://www.reddit.com/r/${posts}.json`);
     const jsonData = await response.json();
