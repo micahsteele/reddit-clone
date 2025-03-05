@@ -7,7 +7,9 @@ export const postsSlice = createSlice({
         filteredPosts: [],
     },
     reducers: {},
-    extraReducers: {},
+    extraReducers: builder => {
+        
+    },
 });
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async(posts) => {
