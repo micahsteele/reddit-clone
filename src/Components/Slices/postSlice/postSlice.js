@@ -1,16 +1,20 @@
 import { createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 
-export const activePostsSlice = createSlice({
-    name: 'activePosts',
+export const postsSlice = createSlice({
+    name: 'posts',
     initialState: {
         posts: [],
         filteredPosts: [],
     },
-    reducers: {
-        loadActivePosts: (state, action) => {
-            state.posts.push(action.payload)
-        }   
-    },
+    reducers: {},
+    extraReducers: {},
 });
 
-export default activePostsSlice.reducer;
+export const fetchPosts = createAsyncThunk('posts/fetchPosts', async(posts) => {
+    const response = await fetch(`https://www.reddit.com/r/${posts}.json`);
+    const jsonData = await response.json();
+    console.log(jsonData);
+    return jsonData;
+});
+
+export default postsSlice.reducer;

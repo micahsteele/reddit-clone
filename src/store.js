@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import activePostsReducer from './Components/Slices/postSlice/postSlice';
+import postsReducer from './Components/Slices/postSlice/postSlice';
+import subredditsReducer from './Components/Slices/subRedditSlice/subRedditSlice';
+
 
 export const store = configureStore({
     reducer: {
-        activePosts: activePostsReducer,
+        posts: postsReducer,
+        subreddits: subredditsReducer,
     }
 });

@@ -7,6 +7,20 @@
     margin-right: 16px;
 }
 
+.up-vote, .down-vote {
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.up-vote:hover {
+    background-color: limegreen;
+}
+
+.down-vote:hover {
+    background-color: red;
+}
+
 .post-container {
     width: 100%;
     display: flex;
@@ -27,3 +41,4 @@
     display: flex;
     justify-content: space-between;
 }
+

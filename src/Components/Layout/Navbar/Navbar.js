@@ -4,7 +4,7 @@ const Navbar = () => {
     return (
         <header className='App-header'>
             <div>
-                Micahs Reddit Clone
+                Micah's Reddit Clone
             </div>
             <div>
                 <form>

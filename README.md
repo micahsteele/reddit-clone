@@ -8,8 +8,8 @@ Tech used: HTML, CSS, JavaScript, React, Redux
 
 I first wireframed the project on paper. Then I made a development roadmap: first create the scaffolding. Building the content in the header, main, aside, and lastly footer. Then populate scaffolding with information from the reddit API. Then testing the application both runs as expected and can be used on any device and browser.
 
-## Lessons Learned: 
+## Lessons Learned:
 
-- How to use CSS grid to layout header, main, aside and footer.
-(To be added as project progresses...)
-
+- How to use CSS grid to layout header, main, and aside.
+- How to import and use icons from an icon library.
+  (To be added as project progresses...)
