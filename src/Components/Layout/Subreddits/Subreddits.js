@@ -22,7 +22,7 @@ const Subreddits = () => {
         <aside>
              <h2>Subreddits</h2>
              {subreddits.map((subreddit, index) => {
-                return <Subreddit />
+                return <Subreddit name={subreddit.name} img={subreddit.img} key={index} />
              })}
         </aside>
     )
