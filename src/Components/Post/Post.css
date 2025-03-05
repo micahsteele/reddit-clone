@@ -10,7 +10,13 @@
   }
 
 .post-votes {
-    margin-right: 16px;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.count-vote {
+    font-size: .85rem;
 }
 
 .up-vote, .down-vote {
@@ -46,5 +52,10 @@
 .post-details {
     display: flex;
     justify-content: space-between;
+    font-size: small;
+    padding-bottom: 8px;
+    padding-right: 8px;
 }
+
+
 

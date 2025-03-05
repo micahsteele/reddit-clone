@@ -27,9 +27,10 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts', async(posts) => {
         return {
            title: t.data.title,
            author: t.data.author,
-           img: t.data.img,
+           img: t.data.thumbnail,
            numComments: t.data.num_comments,
            count: t.data.score,
+           subreddit: t.data.subreddit,
         }
     });
     console.log(children);
