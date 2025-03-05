@@ -13,10 +13,10 @@ const Post = (props) => {
                 </div>
                 <div className='post-container'>
                     <div className='post-title'>{props.title}</div>
-                    <div className='post-image'><img src={props.img} /></div>
+                    <img src={props.img} />
                     <div className='post-details'>
                         <span className='post-author'>{props.author}</span>
-                        <span className='post-subreddit'>{props.subreddit}</span>
+                        <span className='post-subreddit'>r/{props.subreddit}</span>
                         <span className='post-comments'><LiaComments />{props.numComments}</span>
                     </div>
                 </div>
