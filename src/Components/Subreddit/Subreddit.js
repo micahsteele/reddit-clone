@@ -12,6 +12,8 @@ const Subreddit = ({name, img, index}) => {
         dispatch(fetchPosts(name))
     };
 
+    if(document.getElementsByClassName('subreddit'))
+
     return (
         <ul className='subreddit'>
             <button className='subreddit-button' onClick={loadPosts}>

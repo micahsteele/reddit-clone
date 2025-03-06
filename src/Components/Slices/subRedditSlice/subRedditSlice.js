@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 const subredditsSlice = createSlice({
     name: 'subreddits',
     initialState: {
-        subreddits: [{name: '', img: ''}]
+        subreddits: []
     },
     reducers: {},
     extraReducers: builder => {
