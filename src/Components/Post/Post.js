@@ -13,7 +13,7 @@ const Post = (props) => {
                 </div>
                 <div className='post-container'>
                     <div className='post-title'>{props.title}</div>
-                    <img src={props.img} alt='post image' />
+                    <img src={props.img} alt='image of post' />
                     <div className='post-details'>
                         <span className='post-author'>{props.author}</span>
                         <span className='post-subreddit'>r/{props.subreddit}</span>

@@ -17,13 +17,13 @@ const Subreddits = () => {
         if(subredditCount > 0) return
         dispatch(fetchSubreddits());
         subredditCount++;
-    }, []);
+    }, [subredditCount, dispatch]);
 
     useEffect(() => {
         if(postCount > 0) return
         dispatch(fetchPosts('popular'));
         postCount++;
-    }, []);
+    }, [postCount, dispatch]);
 
     if(subredditsLoading) return (
         <aside>
