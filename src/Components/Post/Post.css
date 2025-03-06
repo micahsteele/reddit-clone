@@ -45,6 +45,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .post-title {
@@ -63,6 +64,17 @@
     font-size: small;
     padding-bottom: 8px;
     padding-right: 8px;
+}
+
+.post-comments {
+    background-color: transparent;
+    border-color: transparent;
+    display: flex;
+    border-radius: 5px;
+}
+
+.post-comments:hover {
+    background-color: silver;
 }
 
 

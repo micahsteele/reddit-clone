@@ -5,10 +5,14 @@ export const postsSlice = createSlice({
     initialState: {
         posts: [],
         filteredPosts: [],
+        comments: [],
     },
     reducers: {
         loadSubredditPosts: (state, action) => {
             state.posts.push(action.payload)
+        },
+        loadComments: (state, action) => {
+            state.comments.push(action.payload)
         },
         clearPosts: (state) => {
             state.posts = []
@@ -42,7 +46,7 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts', async(posts) => {
            subreddit: t.data.subreddit,
         }
     });
-    console.log(children);
+    console.log(jsonData);
     return subredditInfo;
 });
 

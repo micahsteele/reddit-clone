@@ -9,13 +9,19 @@ import { selectSubreddits } from '../../Slices/subRedditSlice/subRedditSlice';
 const Subreddits = () => {
     const dispatch = useDispatch();
     const { subreddits } = useSelector(selectSubreddits);
+    let subredditCount = 0;
+    let postCount = 0;
 
     useEffect(() => {
-        dispatch(fetchSubreddits())
+        if(subredditCount > 0) return
+        dispatch(fetchSubreddits());
+        subredditCount++;
     }, []);
 
     useEffect(() => {
-        dispatch(fetchPosts('popular'))
+        if(postCount > 0) return
+        dispatch(fetchPosts('popular'));
+        postCount++;
     }, []);
 
     return (

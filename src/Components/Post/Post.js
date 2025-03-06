@@ -7,7 +7,7 @@ const Post = (props) => {
         <article>
             <div className='post'>
                 <div className='post-votes'>
-                    <button className='up-vote'><RxThickArrowUp  /></button>
+                    <button className='up-vote'><RxThickArrowUp className='up-vote-icon' /></button>
                     <p className='count-vote'>{props.count}</p>
                     <button className='down-vote'><RxThickArrowDown /></button>
                 </div>
@@ -17,7 +17,7 @@ const Post = (props) => {
                     <div className='post-details'>
                         <span className='post-author'>{props.author}</span>
                         <span className='post-subreddit'>r/{props.subreddit}</span>
-                        <span className='post-comments'><LiaComments />{props.numComments}</span>
+                        <button className='post-comments'><LiaComments />{props.numComments}</button>
                     </div>
                 </div>
             </div>

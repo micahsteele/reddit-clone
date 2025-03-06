@@ -12,4 +12,5 @@ I first wireframed the project on paper. Then I made a development roadmap: firs
 
 - How to use CSS grid to layout header, main, and aside.
 - How to import and use icons from an icon library.
+- How to implement slices and async thunks.
   (To be added as project progresses...)
