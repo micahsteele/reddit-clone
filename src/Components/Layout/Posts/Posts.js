@@ -7,7 +7,6 @@ const Posts = () => {
     const dispatch = useDispatch();
     const { posts } = useSelector(selectPosts);
     const loadingPosts = useSelector(selectLoading);
-    console.log(loadingPosts);
 
     if(loadingPosts) return (
             <div className='Posts'>

@@ -4,11 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchSubreddits } from '../../Slices/subRedditSlice/subRedditSlice';
 import { fetchPosts } from '../../Slices/postSlice/postSlice';
-import { selectSubreddits } from '../../Slices/subRedditSlice/subRedditSlice';
+import { selectSubreddits, selectSubredditsIsLoading } from '../../Slices/subRedditSlice/subRedditSlice';
 
 const Subreddits = () => {
     const dispatch = useDispatch();
     const { subreddits } = useSelector(selectSubreddits);
+    const subredditsLoading = useSelector(selectSubredditsIsLoading);
     let subredditCount = 0;
     let postCount = 0;
 
@@ -23,6 +24,13 @@ const Subreddits = () => {
         dispatch(fetchPosts('popular'));
         postCount++;
     }, []);
+
+    if(subredditsLoading) return (
+        <aside>
+            <h2>Subreddits</h2>
+            <p>Loading Subreddits...</p>
+        </aside>
+    )
 
     return (
         <aside>

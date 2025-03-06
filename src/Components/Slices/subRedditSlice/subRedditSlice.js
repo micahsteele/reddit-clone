@@ -3,12 +3,16 @@ import { createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 const subredditsSlice = createSlice({
     name: 'subreddits',
     initialState: {
-        subreddits: []
+        subreddits: [],
+        isLoading: false,
     },
     reducers: {},
     extraReducers: builder => {
+        builder.addCase(fetchSubreddits.pending, (state) => {
+            state.isLoading = true;
+        })
         builder.addCase(fetchSubreddits.fulfilled, (state, aciton) => {
-            console.log(aciton.payload)
+            state.isLoading = false;
             aciton.payload.forEach(element => {
               state.subreddits.push(element)  
             })
@@ -17,6 +21,7 @@ const subredditsSlice = createSlice({
 });
 
 export const selectSubreddits = (state) => state.subreddits;
+export const selectSubredditsIsLoading = (state) => state.subreddits.isLoading;
 
 export const fetchSubreddits = createAsyncThunk('subreddits/fetchSubreddits', async() => {
     const response = await fetch('https://www.reddit.com/r/popular.json');
@@ -29,7 +34,6 @@ export const fetchSubreddits = createAsyncThunk('subreddits/fetchSubreddits', as
             img:  t.data.thumbnail,
         }
     });
-    console.log(children);
     return subredditInfo;
 });
 

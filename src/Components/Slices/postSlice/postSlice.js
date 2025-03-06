@@ -22,13 +22,10 @@ export const postsSlice = createSlice({
     },
     extraReducers: builder => {
         builder.addCase(fetchPosts.pending, (state) => {
-            console.log(`loading is :${state.isLoading}`);
             state.isLoading = true;
-            console.log(`loading is :${state.isLoading}`);
         })
         builder.addCase(fetchPosts.fulfilled, (state, action) => {
             state.isLoading = false;
-            console.log(`loading is :${state.isLoading}`);
             action.payload.forEach(element => {
                 state.posts.push(element)
             });
