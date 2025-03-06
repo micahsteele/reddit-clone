@@ -1,15 +1,19 @@
 import Post from '../../Post/Post';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { selectPosts } from '../../Slices/postSlice/postSlice';
+import { selectPosts, selectLoading } from '../../Slices/postSlice/postSlice';
 
 const Posts = () => {
     const dispatch = useDispatch();
     const { posts } = useSelector(selectPosts);
+    const loadingPosts = useSelector(selectLoading);
+    console.log(loadingPosts);
 
-    // useEffect(() => {
-    //     dispatch()
-    // });
+    if(loadingPosts) return (
+            <div className='Posts'>
+                <p>Loading Posts...</p>
+            </div>
+    );
 
     return (
         <div className='Posts'>
@@ -18,7 +22,7 @@ const Posts = () => {
                 count={post.count} img={post.img} subreddit={post.subreddit} key={index} />
             })}
         </div>
-    )
+    );
 };
 
 export default Posts;

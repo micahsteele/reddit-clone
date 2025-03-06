@@ -6,6 +6,7 @@ export const postsSlice = createSlice({
         posts: [],
         filteredPosts: [],
         comments: [],
+        isLoading: false,
     },
     reducers: {
         loadSubredditPosts: (state, action) => {
@@ -20,7 +21,14 @@ export const postsSlice = createSlice({
         }
     },
     extraReducers: builder => {
+        builder.addCase(fetchPosts.pending, (state) => {
+            console.log(`loading is :${state.isLoading}`);
+            state.isLoading = true;
+            console.log(`loading is :${state.isLoading}`);
+        })
         builder.addCase(fetchPosts.fulfilled, (state, action) => {
+            state.isLoading = false;
+            console.log(`loading is :${state.isLoading}`);
             action.payload.forEach(element => {
                 state.posts.push(element)
             });
@@ -29,6 +37,7 @@ export const postsSlice = createSlice({
 });
 
 export const selectPosts = (state) => state.posts;
+export const selectLoading = (state) => state.posts.isLoading;
 export const { loadSubredditPosts, clearPosts } = postsSlice.actions;
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async(posts) => {
@@ -46,7 +55,6 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts', async(posts) => {
            subreddit: t.data.subreddit,
         }
     });
-    console.log(jsonData);
     return subredditInfo;
 });
 
