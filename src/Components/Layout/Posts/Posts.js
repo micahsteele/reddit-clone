@@ -1,10 +1,8 @@
 import Post from '../../Post/Post';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { selectPosts, selectLoading } from '../../Slices/postSlice/postSlice';
 
 const Posts = () => {
-    const dispatch = useDispatch();
     const { posts } = useSelector(selectPosts);
     const loadingPosts = useSelector(selectLoading);
 

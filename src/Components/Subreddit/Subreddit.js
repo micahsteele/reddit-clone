@@ -17,7 +17,7 @@ const Subreddit = ({name, img, index}) => {
     return (
         <ul className='subreddit'>
             <button className='subreddit-button' onClick={loadPosts}>
-                {<img src={img}/>}
+                {<img src={img} alt='subreddit community icon'/>}
                 <li className='subreddit-name'>{name}</li>
             </button>
         </ul>
